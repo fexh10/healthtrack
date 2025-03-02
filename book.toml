@@ -1,6 +1,16 @@
 [book]
-authors = []
-language = "en"
+authors = ["Fernando Henrique Gavezzotti"]
+language = "it"
 multilingual = false
 src = "src"
 title = "HealthTrack: Il Tuo Monitoraggio della Salute Digitale"
+
+[preprocessor]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output]
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]

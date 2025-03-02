@@ -1,1 +1,0 @@
-# Interpretazione dei Dati

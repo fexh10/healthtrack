@@ -153,7 +153,6 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="visualizzazione-dei-dati"><a class="header" href="#visualizzazione-dei-dati">Visualizzazione dei Dati</a></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla ac lectus euismod ullamcorper. Vivamus laoreet ex non tortor faucibus, a efficitur ante posuere. Morbi pretium cursus tincidunt.</p>
 <h2 id="numeri-di-passi"><a class="header" href="#numeri-di-passi">Numeri di Passi</a></h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla ac lectus euismod ullamcorper. Vivamus laoreet ex non tortor faucibus, a efficitur ante posuere. Morbi pretium cursus tincidunt.</p>
 <div id="steps-chart" style="width: 600px; height: 400px;"></div>
@@ -375,22 +374,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

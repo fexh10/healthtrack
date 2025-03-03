@@ -26,4 +26,4 @@ Secondo il [National Sleep Foundation](https://www.sleepfoundation.org/how-sleep
 
 ## SpO2
 
-Secondo [MedlinePlus](https://medlineplus.gov/ency/article/003266.htm), facente parte del National Institute of Health, i valori normali di saturazione di ossigeno nel sangue (SpO2) sono tra il 95% e il 100%. Valori inferiori al 90% possono indicare una condizione di ipossia, mentre valori inferiori al 60% possono essere pericolosi.git 
+Secondo [MedlinePlus](https://medlineplus.gov/ency/article/003266.htm), facente parte del National Institute of Health, i valori normali di saturazione di ossigeno nel sangue (SpO2) sono tra il 95% e il 100%. Valori inferiori al 90% possono indicare una condizione di ipossia, mentre valori inferiori al 60% possono essere pericolosi.

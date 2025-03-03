@@ -1,5 +1,6 @@
 # Visualizzazione dei Dati
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla ac lectus euismod ullamcorper. Vivamus laoreet ex non tortor faucibus, a efficitur ante posuere. Morbi pretium cursus tincidunt.
+
+
 
 ## Numeri di Passi
 

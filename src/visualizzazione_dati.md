@@ -60,3 +60,15 @@ gantt
     Pesante      :active, 06:00, 1h
     Leggero      :active, 07:00, 1h
 ```
+
+## SpO2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla ac lectus euismod ullamcorper. Vivamus laoreet ex non tortor faucibus, a efficitur ante posuere. Morbi pretium cursus tincidunt.
+
+```mermaid
+xychart-beta
+    title "Livello di O2"
+    x-axis ["08:00","10:00","12:00","14:00","16:00","18:00"]
+    y-axis "Saturazione %" 90 --> 100
+    line [95, 96, 97, 95, 98, 97]
+```

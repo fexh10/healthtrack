@@ -103,56 +103,51 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla ac l
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
 <script>
     var chart = echarts.init(document.getElementById('gantt-chart'));
+    var startTimes = [0, 120, 300, 360, 420]; // Inizio fase (in minuti dall'ora 00:00)
+    var durations = [120, 180, 60, 60, 60];  // Durata di ogni fase (in minuti)
+    var phases = ["Leggero", "Pesante", "REM", "Pesante", "Leggero"];
+    var colors = ['#5470C6', '#91CC75', '#EE6666', '#91CC75', '#5470C6']; // Colori per ogni fase
     var option = {
         title: { text: 'Fasi del Sonno durante la Notte' },
         tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'shadow' },
             formatter: function (params) {
-                if (params.seriesName === 'Inizio') return '';
-                var offset = option.series[0].data[params.dataIndex];
-                var duration = params.data;
-                var startHour = Math.floor(offset / 60);
-                var startMin = offset % 60;
-                var endMinutes = offset + duration;
-                var endHour = Math.floor(endMinutes / 60);
-                var endMin = endMinutes % 60;
-                return params.name + '<br/>' +
-                    'Da ' +
-                    (startHour < 10 ? '0' + startHour : startHour) + ':' +
-                    (startMin < 10 ? '0' + startMin : startMin) +
-                    ' a ' +
-                    (endHour < 10 ? '0' + endHour : endHour) + ':' +
-                    (endMin < 10 ? '0' + endMin : endMin);
+                var index = params[1].dataIndex;
+                var start = startTimes[index];
+                var duration = durations[index];
+                var startHour = Math.floor(start / 60);
+                var endTime = start + duration;
+                var endHour = Math.floor(endTime / 60);
+                return phases[index] + '<br/>' +
+                    'Da ' + String(startHour).padStart(2, '0') + ':00' +
+                    ' a ' + String(endHour).padStart(2, '0') + ':00';
             }
         },
         grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
         xAxis: {
             type: 'value',
             min: 0,
-            max: 480,
+            max: 480, // 8 ore (480 minuti)
+            interval: 60, // Mostra solo le ore intere
             axisLabel: {
                 formatter: function (value) {
-                    var hours = Math.floor(value / 60);
-                    var minutes = value % 60;
-                    return (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes);
+                    return String(Math.round(value / 60)).padStart(2, '0') + ':00';
                 }
             }
         },
         yAxis: {
             type: 'category',
-            data: ['Leggero', 'Pesante', 'REM']
+            data: phases
         },
         series: [
             {
                 name: 'Inizio',
                 type: 'bar',
                 stack: 'total',
-                itemStyle: {
-                    color: 'transparent'
-                },
-                emphasis: {
-                    itemStyle: { color: 'transparent' }
-                },
-                data: [0, 120, 300]
+                itemStyle: { color: 'transparent' },
+                emphasis: { itemStyle: { color: 'transparent' } },
+                data: startTimes
             },
             {
                 name: 'Fase',
@@ -163,18 +158,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla ac l
                     position: 'inside',
                     formatter: '{c} min'
                 },
-                data: [120, 180, 60],
+                data: durations,
                 itemStyle: {
-                    color: function (params) {
-                        var colors = ['#5470C6', '#91CC75', '#EE6666'];
-                        return colors[params.dataIndex];
-                    }
+                    color: function (params) { return colors[params.dataIndex]; }
                 }
             }
         ]
     };
     chart.setOption(option);
 </script>
+
 
 ## SpO2
 
